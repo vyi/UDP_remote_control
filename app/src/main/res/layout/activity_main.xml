@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ToggleButton
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/togg"
+        android:textOff="Velocity Mode"
+        android:textOn="    PWM Mode    "
+        android:text="PWM or Velocity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/right_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RIGHT"
+        app:layout_constraintBottom_toTopOf="@+id/stop_button"
+        app:layout_constraintStart_toEndOf="@+id/forward_button"
+        app:layout_constraintTop_toBottomOf="@+id/forward_button" />
+
+    <Button
+        android:id="@+id/left_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LEFT"
+        app:layout_constraintBottom_toTopOf="@+id/stop_button"
+        app:layout_constraintEnd_toStartOf="@+id/forward_button"
+        app:layout_constraintTop_toBottomOf="@+id/forward_button" />
+
+    <Button
+        android:id="@+id/stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/right_button"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/left_button"
+        app:layout_constraintTop_toBottomOf="@+id/forward_button"
+        app:layout_constraintVertical_bias="0.373" />
+
+    <Button
+        android:id="@+id/forward_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FORWARD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571" />
+
+
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/defaultIP"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/defaultPORT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
+        />
+
+    <Button
+        android:id="@+id/plusV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="++"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/vVal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/plusW"
+        android:layout_margin="4dp"
+        />
+
+    <Button
+        android:id="@+id/plusW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:text="++"
+        app:layout_constraintBottom_toTopOf="@id/wVal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/plusV"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="4dp"
+        />
+
+    <Button
+        android:id="@+id/minusV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        app:layout_constraintEnd_toEndOf="@+id/plusV"
+        app:layout_constraintStart_toStartOf="@+id/plusV"
+        app:layout_constraintTop_toBottomOf="@id/vVal"
+        android:layout_margin="4dp"
+        />
+
+
+    <Button
+        android:id="@+id/minusW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        app:layout_constraintEnd_toEndOf="@+id/plusW"
+        app:layout_constraintStart_toEndOf="@id/minusV"
+        app:layout_constraintStart_toStartOf="@+id/plusW"
+        app:layout_constraintTop_toBottomOf="@id/wVal"
+        android:layout_margin="4dp"
+        />
+
+    <TextView
+        android:id="@+id/vVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/minusV"
+        app:layout_constraintEnd_toEndOf="@+id/plusV"
+        app:layout_constraintStart_toStartOf="@+id/plusV"
+        app:layout_constraintTop_toBottomOf="@+id/plusV"
+        android:layout_margin="4dp"
+        />
+
+    <TextView
+        android:id="@+id/wVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/minusW"
+        app:layout_constraintEnd_toEndOf="@+id/plusW"
+        app:layout_constraintStart_toStartOf="@+id/plusW"
+        app:layout_constraintTop_toBottomOf="@+id/plusW"
+        android:layout_margin="4dp"
+        />
+
+    <TextView
+        android:id="@+id/PWM_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minusV"
+        android:text="Linear Velocity: "
+        />
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/PWM_left"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PWM_right"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        android:text="Angular velocity: 0"
+        />
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/PWM_right" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Udp</string>
+    <string name="defaultIP">192.168.0.61</string>
+    <string name="defaultPORT">5117</string>
+</resources>
